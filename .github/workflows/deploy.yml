@@ -35,9 +35,9 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i EC2\ Ecommerce.pem ec2-user@54.164.169.200 
           # sudo apt update && sudo apt upgrade -y
           # sudo apt-get install yum -y
-          sudo yum update -y
-          sudo yum install git -y 
-          cd ./CloudComputingDev-ecommerce/
+          # sudo yum update -y
+          # sudo yum install git -y 
+          # cd ./CloudComputingDev-ecommerce/
           git pull origin main
           source venv/bin/activate 
           pip install -r requirements.txt 
