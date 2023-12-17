@@ -33,6 +33,8 @@ jobs:
         run: |
           chmod 400 EC2\ Ecommerce.pem  # Ensure proper file permissions
           ssh -o StrictHostKeyChecking=no -i EC2\ Ecommerce.pem ec2-user@54.164.169.200 
+          sudo apt-get update -y
+          sudo apt-get install yum -y
           sudo yum update -y
           sudo yum install git -y 
           cd ./CloudComputingDev-ecommerce/
