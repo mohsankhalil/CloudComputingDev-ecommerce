@@ -32,6 +32,15 @@ jobs:
       - name: Deploy to EC2
         run: |
           chmod 400 EC2\ Ecommerce.pem  # Ensure proper file permissions
-          ssh -o StrictHostKeyChecking=no -i EC2\ Ecommerce.pem ec2-user@54.164.169.200 'sudo yum update -y && sudo yum install git -y  $$ cd CloudComputingDev-ecommerce/ && git pull origin main && source venv/bin/activate && pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic && sudo systemctl restart gunicorn'
+          ssh -o StrictHostKeyChecking=no -i EC2\ Ecommerce.pem ec2-user@54.164.169.200 
+          sudo yum update -y
+          sudo yum install git -y 
+          cd ./CloudComputingDev-ecommerce/
+          git pull origin main
+          source venv/bin/activate 
+          pip install -r requirements.txt 
+          python manage.py migrate 
+          python manage.py collectstatic 
+          sudo systemctl restart gunicorn
 
   # Add other steps for testing, linting, etc., as needed
